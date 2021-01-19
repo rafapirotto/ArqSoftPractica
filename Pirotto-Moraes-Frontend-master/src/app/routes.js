@@ -1,0 +1,12 @@
+export const LOGIN_ROUTE = "/";
+export const SIGN_UP_ROUTE = "/sign_up";
+export const DASHBOARD_ROUTE = "/dashboard";
+export const CREATE_INVITATION_ROUTE = `${DASHBOARD_ROUTE}/create_invitation`;
+export const STATISTICS_REPORT_ROUTE = `${DASHBOARD_ROUTE}/statistics_report`;
+export const TOP10_REPORT_ROUTE = `${DASHBOARD_ROUTE}/top10_report`;
+export const UNASSIGNED_REPORT_ROUTE = `${DASHBOARD_ROUTE}/unassigned_report`;
+export const SIGN_UP_BY_INVITATION_ROUTE = "/invitation/:id";
+export const DETAILED_ERROR_ROUTE = `${DASHBOARD_ROUTE}/detailed_error`;
+export const API_KEY_ROUTE = `${DASHBOARD_ROUTE}/api_key`;
+export const PREFERENCES_ROUTE = `${DASHBOARD_ROUTE}/preferences`;
+export const BILLING_ROUTE = `${DASHBOARD_ROUTE}/billing`;

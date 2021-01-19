@@ -1,0 +1,3 @@
+export const REQUEST_API_KEY = "REQUEST_API_KEY";
+export const SUCCESS_API_KEY = "SUCCESS_API_KEY";
+export const ERROR_API_KEY = "ERROR_API_KEY";

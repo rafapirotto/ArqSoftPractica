@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "f4076bbe-adb4-4cdb-8bbd-87e92601144b",
+		"name": "Pruebas funcionales RF9 y Rf10",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RF9",
+			"item": [
+				{
+					"name": "TEST - Create error OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "caf5efd1-106d-447b-8b7c-eda246e743f4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function (){",
+									"    pm.response.to.have.status(200);",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Id",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Institution",
+								"type": "text",
+								"value": "1",
+								"disabled": true
+							},
+							{
+								"key": "organization",
+								"type": "text",
+								"value": "Uber",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"ERROR 7423\",\n\t\"description\": \"Problemas deploy\",\n    \"severity\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/errors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"errors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST - Create error without title",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "902dba18-a4c5-4b97-879a-d994bc393912",
+								"exec": [
+									"pm.test(\"Status code is 200\", function (){",
+									"    pm.response.to.have.status(403);",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Id",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Institution",
+								"type": "text",
+								"value": "1",
+								"disabled": true
+							},
+							{
+								"key": "organization",
+								"type": "text",
+								"value": "Uber",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\": \"Problemas con base de datos\",\n    \"severity\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/errors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"errors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST - Create error with wrong severity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cb699024-ae5e-48a7-85de-4ab6cf7002a1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function (){",
+									"    pm.response.to.have.status(403);",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Id",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Institution",
+								"type": "text",
+								"value": "1",
+								"disabled": true
+							},
+							{
+								"key": "organization",
+								"type": "text",
+								"value": "Uber",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"ERROR 2325\",\n\t\"description\": \"Problemas con base de datos\",\n    \"severity\": 8\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/errors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"errors"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "RF10",
+			"item": [
+				{
+					"name": "TEST - Get critic errors OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "148dad3b-0a94-4cb8-acd2-8102eed7340c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Id",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Institution",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "organization",
+								"value": "Uber",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/errors/critics",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"errors",
+								"critics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST - Critic errors sorted",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b9ee29f1-ea34-4e30-bb2f-1efbf82d0162",
+								"exec": [
+									"pm.test(\"Errors are sorted by severity\", () => {",
+									"    const response = pm.response.json();",
+									"",
+									"    const isAscending = response.map(item => item.severity).every((current, index, ids) => index === 0 || current >= ids[index-1]);",
+									"    ",
+									"    pm.expect(isAscending).to.be.true;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Id",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Institution",
+								"type": "text",
+								"value": "1",
+								"disabled": true
+							},
+							{
+								"key": "organization",
+								"type": "text",
+								"value": "Uber"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/errors/critics",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"errors",
+								"critics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST - Critic errors only 5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ebb7a763-8716-494b-a285-7e69b0b5c257",
+								"exec": [
+									"pm.test(\"Errors are only five\", () => {",
+									"    const response = pm.response.json();",
+									"    const length = response.length;",
+									"    pm.expect(length).to.be.below(6);;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{key}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Id",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Institution",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "organization",
+								"value": "Uber",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/errors/critics",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"errors",
+								"critics"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

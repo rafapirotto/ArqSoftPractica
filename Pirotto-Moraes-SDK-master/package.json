@@ -1,0 +1,27 @@
+{
+  "name": "add-error",
+  "version": "1.0.0",
+  "description": "Npm package for the add error functionality",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArqSoftPractica/Pirotto-Moraes.git"
+  },
+  "keywords": [
+    "add",
+    "error"
+  ],
+  "author": "Pirotto-Moraes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArqSoftPractica/Pirotto-Moraes/issues"
+  },
+  "homepage": "https://github.com/ArqSoftPractica/Pirotto-Moraes#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "dotenv": "^8.2.0"
+  }
+}
